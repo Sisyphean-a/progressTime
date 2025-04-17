@@ -1,71 +1,70 @@
-# progressTime README
+# 呼吸练习助手 (Progress Time)
 
-This is the README for your extension "progressTime". After writing up a brief description, we recommend including the following sections.
+一个帮助您进行呼吸练习的 VS Code 扩展。在状态栏显示动态进度条，特别适合进行 4-7-8 呼吸法等呼吸练习。
 
-## Features
+## 功能特点
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- 在 VS Code 状态栏显示动态进度条
+- 支持自定义多个呼吸阶段的时长
+- 使用不同颜色指示器显示当前呼吸阶段
+- 可选择显示当前阶段的倒计时秒数
+- 练习完成后自动循环开始
 
-For example if there is an image subfolder under your extension project workspace:
+## 使用方法
 
-\!\[feature X\]\(images/feature-x.png\)
+1. 按下 `Ctrl+Shift+P` 打开命令面板
+2. 输入并选择 "开始呼吸练习" 来启动
+3. 根据状态栏的提示进行呼吸练习
+4. 需要停止时，打开命令面板并选择 "停止呼吸练习"
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 状态栏显示说明
 
-## Requirements
+- 🔵⚪⚪：第一阶段（例如：吸气）
+- ⚪🔵⚪：第二阶段（例如：屏气）
+- ⚪⚪🔵：第三阶段（例如：呼气）
+- 数字显示：当前阶段剩余秒数
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## 扩展设置
 
-## Extension Settings
+此扩展提供以下设置：
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+* `progressTime.sections`: 设置各个呼吸阶段的时长（秒）
+  * 类型：数字数组
+  * 默认值：`[4, 7, 8]`
+  * 示例：`[4, 7, 8]` 表示三个阶段分别持续 4 秒、7 秒和 8 秒
+* `progressTime.showCountdown`: 是否显示倒计时数字
+  * 类型：布尔值
+  * 默认值：`true`
+  * `true`: 显示倒计时数字
+  * `false`: 只显示进度指示器
 
-For example:
+## 配置示例
 
-This extension contributes the following settings:
+在 VS Code 设置中添加：
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+```json
+{
+    "progressTime.sections": [4, 7, 8],
+    "progressTime.showCountdown": true
+}
+```
 
-## Known Issues
+这个配置适用于标准的 4-7-8 呼吸法：
+1. 吸气 4 秒
+2. 屏气 7 秒
+3. 呼气 8 秒
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## 使用建议
 
-## Release Notes
+- 建议在安静的环境下进行练习
+- 保持正确的坐姿
+- 如果感到不适，请立即停止练习
+- 可以根据个人情况调整各阶段时长
 
-Users appreciate release notes as you update your extension.
+## 版本记录
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+### 0.0.1 (2024-04-17)
+- 初始版本
+- 支持自定义呼吸阶段时长
+- 支持显示/隐藏倒计时
+- 状态栏动态指示器
