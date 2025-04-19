@@ -2,6 +2,46 @@
 
 一个帮助您进行呼吸练习的 VS Code 扩展。在状态栏显示动态进度条，特别适合进行 4-7-8 呼吸法等呼吸练习。
 
+## 本地开发环境搭建
+
+### 前置要求
+- Node.js (推荐 v14.x 或更高版本)
+- VS Code
+- Git
+
+### 安装步骤
+
+1. 克隆项目到本地：
+```bash
+git clone [项目地址]
+cd progressTime
+```
+
+2. 安装依赖：
+```bash
+npm install
+```
+
+3. 编译项目：
+```bash
+npm run compile
+```
+
+4. 启动开发模式：
+   - 按 F5 键启动调试
+   - 或者使用命令面板（Ctrl+Shift+P）并选择 "Start Debugging"
+   - 这将打开一个新的 VS Code 窗口，其中加载了您的扩展
+
+### 开发注意事项
+- 如果遇到编译问题，可以尝试：
+  ```bash
+  rm -rf node_modules
+  rm package-lock.json
+  npm install
+  ```
+- 确保已安装所有必要的 VS Code 扩展（特别是 TypeScript 和 ESLint）
+- 建议使用最新版本的 VS Code
+
 ## 功能特点
 
 - 在 VS Code 状态栏显示动态进度条
